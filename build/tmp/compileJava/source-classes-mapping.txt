@@ -1,30 +1,32 @@
-Utils/Util.java
- Utils.Util
-Model/Item.java
- Model.Item
-Model/Category.java
- Model.Category
-Console/AppConsole.java
- Console.AppConsole
-View/ListModel.java
- View.ListModel
-View/ListView.java
- View.ListView
-View/ListWithCategoriesView.java
- View.ListWithCategoriesView
-App.java
- App
-Console/ListViewConsole.java
- Console.ListViewConsole
-Model/ItemDecorator.java
- Model.ItemDecorator
-Model/Stockroom.java
- Model.Stockroom
-Controller/User.java
- Controller.User
-Model/List.java
- Model.List
-Model/ListWithCategories.java
- Model.ListWithCategories
-Console/UserConsole.java
- Console.UserConsole
+isel/MoP/Model/ItemDecorator.java
+ isel.MoP.Model.ItemDecorator
+isel/MoP/Console/ListViewConsole.java
+ isel.MoP.Console.ListViewConsole
+isel/MoP/View/ListWithCategoriesView.java
+ isel.MoP.View.ListWithCategoriesView
+isel/MoP/Model/Stockroom.java
+ isel.MoP.Model.Stockroom
+isel/MoP/Utils/ModelUtils.java
+ isel.MoP.Utils.ModelUtils
+isel/MoP/Utils/ViewUtils.java
+ isel.MoP.Utils.ViewUtils
+isel/MoP/View/ListView.java
+ isel.MoP.View.ListView
+isel/MoP/App.java
+ isel.MoP.App
+isel/MoP/View/ListModel.java
+ isel.MoP.View.ListModel
+isel/MoP/Model/Category.java
+ isel.MoP.Model.Category
+isel/MoP/Model/Item.java
+ isel.MoP.Model.Item
+isel/MoP/Controller/User.java
+ isel.MoP.Controller.User
+isel/MoP/Model/ListWithCategories.java
+ isel.MoP.Model.ListWithCategories
+isel/MoP/Model/List.java
+ isel.MoP.Model.List
+isel/MoP/Console/AppConsole.java
+ isel.MoP.Console.AppConsole
+isel/MoP/Console/ControllerConsole.java
+ isel.MoP.Console.ControllerConsole
