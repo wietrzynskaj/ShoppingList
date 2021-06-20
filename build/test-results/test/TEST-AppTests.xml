@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AppTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-06-20T01:00:15" hostname="LAPTOP-1OREF5CR" time="0.026">
+  <properties/>
+  <testcase name="readAndWriteToFileTest" classname="AppTests" time="0.011"/>
+  <testcase name="addingNewDuplicatedItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="removingNotExistingItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="uncheckingItemWrongInputTest" classname="AppTests" time="0.0"/>
+  <testcase name="exceptionThrowableTest" classname="AppTests" time="0.001"/>
+  <testcase name="uncheckingItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="addingCategoryTest" classname="AppTests" time="0.005"/>
+  <testcase name="addingNewItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="removingItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="sortingListTest" classname="AppTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

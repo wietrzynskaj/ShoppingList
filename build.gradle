@@ -11,6 +11,3 @@ dependencies {
     testImplementation fileTree(dir: 'vendor/test', include: '*.jar')
 }
 
-test {
-    useJUnitPlatform()
-}

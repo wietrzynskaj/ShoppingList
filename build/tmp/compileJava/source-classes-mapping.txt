@@ -1,0 +1,30 @@
+Utils/Util.java
+ Utils.Util
+Model/Item.java
+ Model.Item
+Model/Category.java
+ Model.Category
+Console/AppConsole.java
+ Console.AppConsole
+View/ListModel.java
+ View.ListModel
+View/ListView.java
+ View.ListView
+View/ListWithCategoriesView.java
+ View.ListWithCategoriesView
+App.java
+ App
+Console/ListViewConsole.java
+ Console.ListViewConsole
+Model/ItemDecorator.java
+ Model.ItemDecorator
+Model/Stockroom.java
+ Model.Stockroom
+Controller/User.java
+ Controller.User
+Model/List.java
+ Model.List
+Model/ListWithCategories.java
+ Model.ListWithCategories
+Console/UserConsole.java
+ Console.UserConsole
