@@ -1,26 +1,43 @@
 package isel.MoP.Model;
 
+import isel.MoP.Utils.ViewUtils;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.util.Comparator;
 
 public class Category extends ItemDecorator implements Comparable<Category> {
 
-    String categoryName;
-    String imageIcon;
-    Item item;
+    final int DEFAULT_ICON_SIZE = 15;
+    final String DEFAULT_ICON = "src/main/java/isel/MoP/Resources/supermarket/png/default.png";
 
+    String categoryName;
+    ImageIcon imageIcon;
+
+    Item item;
     public Category(Item item, String categoryName) {
         super(item.getName());
         this.item = item;
         this.categoryName = categoryName;
     }
 
-    public Category(Item item, String name, String imageIcon) {
-        super(name);
-        this.imageIcon = imageIcon;
+    public Category(Item item, String categoryName, String fileName) {
+        super(item.getName());
+        this.item = item;
+        this.categoryName = categoryName;
+        File file = new File(fileName);
+        if(file.exists()) {
+            imageIcon = ViewUtils.resizeIcon(new ImageIcon(fileName), DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE);
+        } else imageIcon = ViewUtils.resizeIcon(new ImageIcon(DEFAULT_ICON), DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE);
     }
 
-    public void setImageIcon(String imageIconName) {
-        this.imageIcon = imageIconName;
+    public void setImageIcon(String fileName) {
+        this.imageIcon =  ViewUtils.resizeIcon(new ImageIcon(fileName),
+                DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE); }
+
+    public ImageIcon getImageIcon() {
+        return imageIcon;
     }
 
     public String getCategoryName() {
@@ -33,7 +50,7 @@ public class Category extends ItemDecorator implements Comparable<Category> {
 
     @Override
     public String toString() {
-        return super.toString() + ", category = " + categoryName;
+        return super.toString();
     }
 
     private static final Comparator<String> nullsComparator = Comparator.nullsLast(String::compareToIgnoreCase);

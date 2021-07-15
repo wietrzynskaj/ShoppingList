@@ -8,7 +8,7 @@ public class Item implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     private String name;
-    private boolean unchecked = false;
+    private boolean checked = false;
 
     public Item(String name) {
         this.name = name;
@@ -22,17 +22,17 @@ public class Item implements Serializable {
         this.name = name;
     }
 
-    public boolean isUnchecked() {
-        return unchecked;
+    public boolean isChecked() {
+        return checked;
     }
 
-    public void setUnchecked(boolean unchecked) {
-        this.unchecked = unchecked;
+    public void setCheck(boolean checked) {
+        this.checked = checked;
     }
 
     @Override
     public String toString() {
-        return "name = " + name + ", unchecked = " + unchecked;
+        return name;
     }
 
     @Override

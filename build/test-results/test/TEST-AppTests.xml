@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTests" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-06-20T10:50:11" hostname="LAPTOP-1OREF5CR" time="0.032">
+<testsuite name="AppTests" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-06-24T09:41:41" hostname="LAPTOP-1OREF5CR" time="0.037">
   <properties/>
-  <testcase name="uncheckingItemWrongInputTest" classname="AppTests" time="0.004"/>
+  <testcase name="addingNewDuplicatedItemTest" classname="AppTests" time="0.006"/>
   <testcase name="removingNotExistingItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="uncheckingItemWrongInputTest" classname="AppTests" time="0.001"/>
+  <testcase name="getIndexOfItemByNameTest" classname="AppTests" time="0.001"/>
   <testcase name="changeNameOfItemTest" classname="AppTests" time="0.0"/>
-  <testcase name="readAndWriteToFileTest" classname="AppTests" time="0.008"/>
-  <testcase name="addingNewDuplicatedItemTest" classname="AppTests" time="0.0"/>
   <testcase name="getNotItemByNameTest" classname="AppTests" time="0.0"/>
-  <testcase name="exceptionThrowableTest" classname="AppTests" time="0.002"/>
-  <testcase name="getIndexOfItemByNameTest" classname="AppTests" time="0.0"/>
+  <testcase name="readAndWriteToFileTest" classname="AppTests" time="0.012"/>
+  <testcase name="addingCategoryTest" classname="AppTests" time="0.008"/>
   <testcase name="removingItemTest" classname="AppTests" time="0.0"/>
-  <testcase name="getListOfItemsTest" classname="AppTests" time="0.0"/>
-  <testcase name="sortingListTest" classname="AppTests" time="0.004"/>
-  <testcase name="addingCategoryTest" classname="AppTests" time="0.005"/>
-  <testcase name="addingNewItemTest" classname="AppTests" time="0.0"/>
-  <testcase name="uncheckingItemTest" classname="AppTests" time="0.001"/>
+  <testcase name="uncheckingItemTest" classname="AppTests" time="0.0"/>
+  <testcase name="addingNewItemTest" classname="AppTests" time="0.001"/>
+  <testcase name="sortingListTest" classname="AppTests" time="0.002"/>
+  <testcase name="getListOfItemsTest" classname="AppTests" time="0.001"/>
+  <testcase name="exceptionThrowableTest" classname="AppTests" time="0.002"/>
   <testcase name="getIndexOfNotExistingItemByNameTest" classname="AppTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

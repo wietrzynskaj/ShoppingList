@@ -32,7 +32,8 @@ public class ControllerConsole {
                 System.out.print("Enter name of your list: ");
                 scanner = new Scanner(System.in);
                 String name = scanner.nextLine();
-                list = new ListWithCategories(name);
+                list = new ListWithCategories();
+                list.setName(name);
                 view = new ListViewConsole();
                 int editing = -1;
                 while (editing != 8) {
@@ -42,7 +43,6 @@ public class ControllerConsole {
                 LOGGER.error("Wrong input! Try again.\n");
             }
         }
-
 
     }
 
@@ -107,10 +107,14 @@ public class ControllerConsole {
                 break;
             }
             case 7: {
-                System.out.print("Enter item's name: ");
-                scanner = new Scanner(System.in);
-                String name = scanner.nextLine();
-                addCategory(name);
+                System.out.print("Enter item's number: ");
+                int number = -1;
+                try {
+                    number = scanner.nextInt();
+                } catch (InputMismatchException e) {
+                    number = -1;
+                }
+                addCategory(number);
                 showList();
                 break;
             }
@@ -132,8 +136,7 @@ public class ControllerConsole {
         if (list.addItem(name)) LOGGER.error(name + " is already in a list");
     }
 
-    void addCategory(String name) {
-        int index = list.getItemIndex(name);
+    void addCategory(int index) {
         if (index != -1) {
             view.showAvailableCategories(((ListWithCategories) list).getCategoriesList());
             view.addingCategoryOptions();
@@ -145,12 +148,12 @@ public class ControllerConsole {
                     System.out.print("Enter number of category: ");
                     choice = getChoice(numberOfCategories);
                 }
-                ((ListWithCategories) list).addCategory(index, ((ListWithCategories) list).getCategory(choice - 1));
+                ((ListWithCategories) list).addCategory(index-1, ((ListWithCategories) list).getCategory(choice - 1));
             } else {
                 System.out.print("Enter category's name: ");
                 scanner = new Scanner(System.in);
                 String categoryName = scanner.nextLine();
-                ((ListWithCategories) list).addCategory(index, categoryName);
+                ((ListWithCategories) list).addCategory(index-1, categoryName);
             }
         } else LOGGER.error("Item not found.");
     }
@@ -169,8 +172,7 @@ public class ControllerConsole {
 
     void save() {
         String name = list.getFileName();
-        if (list.validateFileName(name)) list.saveList(name);
-        else {
+        if (list.validateFileName(name)) {
             System.out.println("File with this name already exist. Do you want to overwrite it?");
             System.out.println("1.yes");
             System.out.println("2.no");
@@ -179,9 +181,15 @@ public class ControllerConsole {
                 System.out.print("Enter new file name: ");
                 scanner = new Scanner(System.in);
                 String newName = scanner.nextLine();
-                list.saveList(newName + ".txt");
-            } else list.saveList(name);
+                name = newName + ".txt";
+            }
         }
+        try {
+            list.saveList(name);
+        } catch (IOException e) {
+            LOGGER.error("Saving to file was not successful");
+        }
+
     }
 
     void loadFromFile() {

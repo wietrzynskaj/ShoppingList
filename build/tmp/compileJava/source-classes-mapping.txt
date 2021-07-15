@@ -1,32 +1,39 @@
-isel/MoP/Model/ItemDecorator.java
- isel.MoP.Model.ItemDecorator
+isel/MoP/Console/AppConsole.java
+ isel.MoP.Console.AppConsole
 isel/MoP/Console/ListViewConsole.java
  isel.MoP.Console.ListViewConsole
-isel/MoP/View/ListWithCategoriesView.java
- isel.MoP.View.ListWithCategoriesView
-isel/MoP/Model/Stockroom.java
- isel.MoP.Model.Stockroom
+isel/MoP/Console/ControllerConsole.java
+ isel.MoP.Console.ControllerConsole
 isel/MoP/Utils/ModelUtils.java
  isel.MoP.Utils.ModelUtils
+isel/MoP/Controller/Controller.java
+ isel.MoP.Controller.Controller
+ isel.MoP.Controller.Controller$AddButtonListener
+ isel.MoP.Controller.Controller$AddCategoryButtonListener
+ isel.MoP.Controller.Controller$DeleteButtonListener
+ isel.MoP.Controller.Controller$ListWindowListener
+ isel.MoP.Controller.Controller$LoadListButtonListener
+ isel.MoP.Controller.Controller$SaveListButtonListener
+ isel.MoP.Controller.Controller$SortListButtonListener
+ isel.MoP.Controller.Controller$UncheckItemButtonListener
 isel/MoP/Utils/ViewUtils.java
  isel.MoP.Utils.ViewUtils
 isel/MoP/View/ListView.java
  isel.MoP.View.ListView
-isel/MoP/App.java
- isel.MoP.App
-isel/MoP/View/ListModel.java
- isel.MoP.View.ListModel
+ isel.MoP.View.ListView$IconAndTextRenderer
+isel/MoP/Model/Stockroom.java
+ isel.MoP.Model.Stockroom
+isel/MoP/InitFrame.java
+ isel.MoP.InitFrame
 isel/MoP/Model/Category.java
  isel.MoP.Model.Category
 isel/MoP/Model/Item.java
  isel.MoP.Model.Item
-isel/MoP/Controller/User.java
- isel.MoP.Controller.User
 isel/MoP/Model/ListWithCategories.java
  isel.MoP.Model.ListWithCategories
+isel/MoP/App.java
+ isel.MoP.App
+isel/MoP/Model/ItemDecorator.java
+ isel.MoP.Model.ItemDecorator
 isel/MoP/Model/List.java
  isel.MoP.Model.List
-isel/MoP/Console/AppConsole.java
- isel.MoP.Console.AppConsole
-isel/MoP/Console/ControllerConsole.java
- isel.MoP.Console.ControllerConsole

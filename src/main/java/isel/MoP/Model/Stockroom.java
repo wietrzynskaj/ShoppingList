@@ -20,8 +20,8 @@ public class Stockroom {
         return stockItems;
     }
 
-    public ArrayList<Item> readItemsFromFile(int number) throws IOException, ClassNotFoundException {
-        String fileName = availableFiles.get(number - 1);
+    public ArrayList<Item> readItemsFromFile(int index) throws IOException, ClassNotFoundException {
+        String fileName = availableFiles.get(index);
         return readItemsFromFile(fileName);
     }
 
@@ -30,7 +30,7 @@ public class Stockroom {
         objectOutputStream.writeObject(items);
         objectOutputStream.flush();
         objectOutputStream.close();
-        if(!availableFiles.contains(fileName)) availableFiles.add(fileName);
+        if (!availableFiles.contains(fileName)) availableFiles.add(fileName);
     }
 
     public boolean checkIfFileNameAlreadyExist(String fileName) {

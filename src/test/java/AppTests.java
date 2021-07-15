@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 
 public class AppTests {
     List list;
-    String DEFAULT_NAME = "test list";
     String TEST_FILE = "test_file.txt";
     String DEFAULT_FILE = "default_file.txt";
     String WRONG_PATH = "wrong_path.txt";
@@ -29,7 +28,7 @@ public class AppTests {
     //initialize a default list for tests
     @Before
     public void init() {
-        list = new List(DEFAULT_NAME);
+        list = new List();
         list.addItem(FIRST_ITEM_NAME);
         list.addItem(SECOND_ITEM_NAME);
         list.addItem(THIRD_ITEM_NAME);
@@ -87,13 +86,13 @@ public class AppTests {
     @Test
     public void uncheckingItemTest() {
         list.uncheckItemAt(FIRST_ITEM_INDEX);
-        assertTrue(list.getItem(FIRST_ITEM_INDEX).isUnchecked());
+        assertTrue(list.getItem(FIRST_ITEM_INDEX).isChecked());
     }
 
     @Test
     public void uncheckingItemWrongInputTest() {
         list.uncheckItemAt(INVALID_INDEX);
-        assertFalse(list.getItem(FIRST_ITEM_INDEX).isUnchecked());
+        assertFalse(list.getItem(FIRST_ITEM_INDEX).isChecked());
     }
 
     @Test
@@ -139,7 +138,7 @@ public class AppTests {
     public void addingCategoryTest() {
         ListWithCategories listWithCategories = new ListWithCategories(list);
         listWithCategories.addCategory(FIRST_ITEM_INDEX, TEST_CATEGORY_NAME);
-        String name = ((Category)(listWithCategories.getItem(FIRST_ITEM_INDEX))).getCategoryName();
+        String name = ((Category) (listWithCategories.getItem(FIRST_ITEM_INDEX))).getCategoryName();
         assertEquals(TEST_CATEGORY_NAME, name);
     }
 

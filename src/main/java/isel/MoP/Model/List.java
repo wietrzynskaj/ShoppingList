@@ -5,47 +5,29 @@ import isel.MoP.Utils.ModelUtils;
 import java.io.IOException;
 import java.util.*;
 
-public class List {
+public abstract class List implements Iterable<Item> {
     String name;
     ArrayList<Item> items = new ArrayList<>();
     final Stockroom stockroom = new Stockroom();
 
-    public List(String name) {
-        this.name = name;
-    }
-
     public ArrayList<Item> getItems() {
         return items;
-    }
-
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
     }
 
     public void sortList() {
         items.sort(Comparator.comparing(Item::getName));
     }
 
-    public void saveList(String fileName) {
-        try {
-            stockroom.saveItems(items, fileName);
-        } catch (IOException e) {
-            System.out.println("Saving to file was not successful");
-        }
+    public void saveList(String fileName) throws IOException {
+        stockroom.saveItems(items, fileName);
     }
 
     public void loadListFromFile(int number) throws IOException, ClassNotFoundException {
         items = stockroom.readItemsFromFile(number);
     }
 
-    public void loadListFromFile(String fileName) {
-        try {
-            items = stockroom.readItemsFromFile(fileName);
-        } catch (IOException e1) {
-            System.out.println("Reading from file was not successful");
-        } catch (ClassNotFoundException e2) {
-            System.out.println("Class not found");
-        }
+    public void loadListFromFile(String fileName) throws IOException, ClassNotFoundException {
+        items = stockroom.readItemsFromFile(fileName);
     }
 
     public String getFileName() {
@@ -53,7 +35,7 @@ public class List {
     }
 
     public boolean validateFileName(String fileName) {
-        return (!stockroom.checkIfFileNameAlreadyExist(fileName));
+        return (fileName != null && stockroom.checkIfFileNameAlreadyExist(fileName));
     }
 
     public boolean addItem(String name) {
@@ -61,7 +43,7 @@ public class List {
         Item newItem = new Item(name);
         items.add(newItem);
         items = ModelUtils.removeDuplicates(items);
-        return sizeBeforeAdding == items.size();
+        return (sizeBeforeAdding + 1) == items.size();
     }
 
     public boolean deleteAt(int index) {
@@ -74,7 +56,7 @@ public class List {
 
     public boolean uncheckItemAt(int index) {
         if (index >= 0 && index < items.size()) {
-            items.get(index).setUnchecked(true);
+            items.get(index).setCheck(true);
             return true;
         }
         return false;
@@ -85,6 +67,10 @@ public class List {
             return items.get(index);
         }
         return null;
+    }
+
+    public void clearList() {
+        items = new ArrayList<>();
     }
 
     public int getItemIndex(String name) {
@@ -101,20 +87,14 @@ public class List {
         return getItem(index);
     }
 
-    public boolean changeName(int index, String newName) {
+    public void changeName(int index, String newName) {
         if (index >= 0 && index < items.size()) {
             items.get(index).setName(newName);
-            return true;
         }
-        return false;
     }
 
     public ArrayList<String> getAvailableFiles() {
         return stockroom.getAvailableFiles();
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String newName) {
@@ -125,8 +105,17 @@ public class List {
         return stockroom;
     }
 
+    public int size() {
+        return items.size();
+    }
+
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public Iterator<Item> iterator() {
+        return items.iterator();
     }
 }
